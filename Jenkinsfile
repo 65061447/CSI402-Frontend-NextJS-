@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             step {
-                //
+                print "Hello Jenkins"
             }
         }
-        
+
     }
 }
