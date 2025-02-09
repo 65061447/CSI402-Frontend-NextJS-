@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
+        stage('Clone') {
+            steps {
+                print "Clone"
+            }
+        }
         stage('Build') {
             steps {
-                print "Hello Jenkins"
+                print "Build"
             }
         }
         stage('Deploy') {
