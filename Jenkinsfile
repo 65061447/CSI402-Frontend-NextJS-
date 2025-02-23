@@ -12,9 +12,10 @@ pipeline {
             steps {
                 print "Docker Build Image"
                 script {
-                    bat "docker build -t csi403_docker ."
+                    bat "docker build -t csi403_docker"
                     print "Docker Build Image Success"
                 }
+                
                 print "Docker Image To Running Container"
                 script {
                     bat "docker run -d --name csi403_docker-run -p 52500:3000 csi403_docker:latest"
