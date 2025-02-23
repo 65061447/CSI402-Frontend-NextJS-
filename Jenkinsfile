@@ -12,7 +12,7 @@ pipeline {
             steps {
                 print "Docker Build Image"
                 script {
-                    bat "docker build -t csi403_docker"
+                    bat "docker build -t csi403_docker ."
                     print "Docker Build Image Success"
                 }
                 
