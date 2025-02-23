@@ -10,8 +10,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-              bat 'docker create --name CSI403_DOCKER csi403_docker:latest'
-              bat 'docker build -t csi403_dockertest .'
+                print "Docker Build Image"
+                script {
+                    bat "docker build -t csi403_docker ."
+                    print "Docker Build Image Success"
+                }
+                print "Docker Image To Running Container"
+                script {
+                    bat "docker run -d --name csi403_docker-run -p 52500:3000 csi403_docker:latest"
+                    print "Docker Image to Running Container Success"
+
+                } 
             }
         }
         stage('Test') {
